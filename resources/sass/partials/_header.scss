@@ -1,0 +1,29 @@
+header {
+	text-align: center;
+
+	.logo {
+		margin-bottom: 2.5rem;
+	}
+
+	nav ul {
+		display: flex;
+		list-style: none;
+		justify-content: center;
+		
+		li {
+			a {
+				display: inline-block;
+				text-decoration: none;
+				padding: 15px 10px;
+				color: #000;
+				font-size: 1.25rem;
+			}
+
+			&.active {
+				a {
+					background-color: $mainColor;
+				}
+			}
+		}
+	}
+}

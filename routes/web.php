@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $data = config("prodotti");
+
+    $tmp = [
+        "paste" => $data
+    ];
+
+    return view('index', $tmp);
 });
