@@ -13,12 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data = config("prodotti");
+Route::get('/', 'PageController@index')->name("homepage");
+Route::get('/news', 'PageController@news')->name("news");
 
-    $tmp = [
-        "paste" => $data
-    ];
-
-    return view('index', $tmp);
-});
+Route::get('/prodotti', 'ProductController@allProducts')->name("tutti-prodotti");
+Route::get("/prodotto/{id}", 'ProductController@singleProduct')->where('id', '[0-9]+')->name("singolo-prodotto");
